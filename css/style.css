@@ -4,7 +4,7 @@
     border: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 h1, h2, h3, h4, h5{
@@ -28,7 +28,12 @@ h1, h2, h3, h4, h5{
 }
 
 .item{
-    padding: 4px;
+    padding: 12px 8px;
+    text-transform: uppercase;
+}
+
+.item:hover{
+    color: yellow
 }
 
 .nav-item {
