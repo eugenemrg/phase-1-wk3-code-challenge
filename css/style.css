@@ -18,6 +18,17 @@ h1, h2, h3, h4, h5{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: black;
+    color: white;
+}
+
+.navigation a{
+    color: white;
+    text-decoration: none;
+}
+
+.item{
+    padding: 4px;
 }
 
 .nav-item {
@@ -25,17 +36,13 @@ h1, h2, h3, h4, h5{
     position: relative;
 }
 
-.nav-item > .nav-item-subnav{
-    position: absolute;
-    display: none;
-    width: 200px;
+.extra {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.nav-item:hover .nav-item-subnav{
-    display: block;
-    left: 0px;
-}
-
-.nav-item-subnav .subnav-item{
-    display: block;
+.extra-icons{
+    font-size: 1.2em;
+    margin-left: 8px;
 }
