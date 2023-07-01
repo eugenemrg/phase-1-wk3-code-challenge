@@ -82,10 +82,11 @@ img.poster {
 
 li.item {
     display: block;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 240px;
     position: relative;
+    max-width: 49%;
 }
 
 li.item:hover div.film-info{
