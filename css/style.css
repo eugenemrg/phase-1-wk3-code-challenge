@@ -4,4 +4,34 @@
     border: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
+    border: 1px solid red;
+}
+
+h1, h2, h3, h4, h5{
+    margin: 8px 0px;
+}
+
+.navigation{
+    width: 100%;
+    padding: 0px 15%;
+}
+
+.nav-item {
+    display: inline-block;
+    position: relative;
+}
+
+.nav-item > .nav-item-subnav{
+    position: absolute;
+    display: none;
+    width: 200px;
+}
+
+.nav-item:hover .nav-item-subnav{
+    display: block;
+    left: 0px;
+}
+
+.nav-item-subnav .subnav-item{
+    display: block;
 }
