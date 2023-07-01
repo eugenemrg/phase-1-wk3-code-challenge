@@ -84,6 +84,7 @@ li.item {
     display: block;
     flex-grow: 1;
     flex-shrink: 1;
+    cursor: pointer;
     flex-basis: 240px;
     position: relative;
     max-width: 49%;
@@ -106,10 +107,25 @@ div.film-info {
     bottom: 0px;
     left: 0px;
     width: 100%;
-    padding: 8px;
+    padding: 48px 16px 16px 16px;
     color: white;
     border-radius: 0px 0px 8px 8px;
 
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+div.film-info p.title{
+    color: #fdc500;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div.film-info p.tickets{
+    display: inline-block;
+    color: black;
+    background-color: #fdc500;
+    border-radius: 16px;
+    padding: 2px 12px;
+    margin: 12px 0px 8px 0px;
 }
