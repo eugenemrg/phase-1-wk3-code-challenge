@@ -57,6 +57,11 @@ h5 {
     margin-left: 12px;
 }
 
+.logo i{
+    display: inline-block;
+    font-size: 1.4em;
+}
+
 /* MAIN-CONTAINER */
 .main-container {
     width: 100%;
