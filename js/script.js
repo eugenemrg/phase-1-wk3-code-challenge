@@ -10,6 +10,15 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
             let item = document.createElement('li')
             item.className = 'film item'
 
+            let deleteIcon = document.createElement('i')
+            deleteIcon.className = 'film-delete fa-solid fa-trash'
+            deleteIcon.addEventListener('click', (e) => {
+                e.stopImmediatePropagation()
+                e.stopPropagation()
+                e.preventDefault()
+                deleteFilm(filmItem)
+            })
+
             let poster = document.createElement('img')
             poster.className = 'poster'
             poster.src = filmItem.poster
@@ -34,6 +43,7 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
             itemInfo.appendChild(showtimeInfo)
             itemInfo.appendChild(ticketInfo)
 
+            item.appendChild(deleteIcon)
             item.appendChild(poster)
             item.appendChild(itemInfo)
 
@@ -118,4 +128,24 @@ function populateSummary(filmItemData, linkToFilmItemOnList) {
             }
         })
     }
+}
+
+function deleteFilm(film) {
+    let filmInfo = { id: film.id }
+
+    let fetchOptions = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(filmInfo)
+    }
+    
+    fetch(`http://localhost:3008/films/${film.id}`, fetchOptions)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+
+    // Refresh page to update UI, functionality to be added later
+    location.reload()
 }
