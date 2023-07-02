@@ -32,9 +32,15 @@ Recommend local installation as the app requires locally running 'json-server' t
 
 # Screenshots
 
+Show first movie's details i.e., poster, title, runtime, showtime, and available tickets
+
 ![screenshot1](assets/screenshots/screenshot01.png)
 
+Show a menu of all movies on the left side of the page when the page loads
+
 ![screenshot2](assets/screenshots/screenshot02.png)
+
+Replace the currently displayed movie's details with the new clicked movie's details
 
 ![screenshot3](assets/screenshots/screenshot03.png)
 
