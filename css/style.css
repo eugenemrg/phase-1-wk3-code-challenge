@@ -97,13 +97,31 @@ li.item {
     max-width: 49%;
 }
 
-li.item:hover div.film-info{
+li.item:hover div.film-info, li.item:hover i.film-delete{
     opacity: 1;
 }
 
 img.poster {
     display: block;
     width: 100%;
+}
+
+i.film-delete{
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 1.4em;
+    padding: 12px;
+    color: white;
+    border-radius: 50%;
+}
+
+i.film-delete:hover{
+    color: #fdc500;
 }
 
 div.film-info {
