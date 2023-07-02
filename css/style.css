@@ -57,7 +57,7 @@ h5 {
     margin-left: 12px;
 }
 
-.logo i{
+.logo i {
     display: inline-block;
     font-size: 1.4em;
 }
@@ -102,7 +102,8 @@ li.item {
     max-width: 49%;
 }
 
-li.item:hover div.film-info, li.item:hover i.film-delete{
+li.item:hover div.film-info,
+li.item:hover i.film-delete {
     opacity: 1;
 }
 
@@ -111,10 +112,10 @@ img.poster {
     width: 100%;
 }
 
-i.film-delete{
+i.film-delete {
     opacity: 0;
     transition: opacity 0.3s linear;
-    
+
     display: inline-block;
     position: absolute;
     right: 8px;
@@ -125,7 +126,7 @@ i.film-delete{
     border-radius: 50%;
 }
 
-i.film-delete:hover{
+i.film-delete:hover {
     color: #fdc500;
 }
 
@@ -145,13 +146,13 @@ div.film-info {
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0) 100%);
 }
 
-div.film-info p.title{
+div.film-info p.title {
     color: #fdc500;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-div.film-info p.tickets{
+div.film-info p.tickets {
     font-size: 0.9em;
     display: inline-block;
     color: black;
@@ -161,7 +162,7 @@ div.film-info p.tickets{
     margin: 12px 0px 8px 0px;
 }
 
-.section-title-container{
+.section-title-container {
     width: 100%;
     display: grid;
     grid-template-columns: 10% 1fr 10%;
@@ -170,7 +171,7 @@ div.film-info p.tickets{
     background-color: #fdc500;
 }
 
-.section-title{
+.section-title {
     grid-area: title;
     font-size: 3.2em;
     font-weight: 600;
@@ -178,12 +179,12 @@ div.film-info p.tickets{
 }
 
 /* Details */
-.details{
+.details {
     grid-area: b;
     padding-left: 32px;
 }
 
-.film-summary{
+.film-summary {
     background-color: white;
     padding: 24px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -192,56 +193,58 @@ div.film-info p.tickets{
     top: 24px;
 }
 
-.sub-header{
+.sub-header {
     color: #fdc500;
     text-transform: uppercase;
 }
 
-.film-description{
+.film-description {
     display: grid;
     grid-template-columns: 1fr 140px;
     grid-template-areas: 'text image';
 }
 
-.film-description-text{
+.film-description-text {
     grid-area: text;
 }
 
-.film-title{
+.film-title {
     text-transform: capitalize;
 }
 
-.film-synopsis{
+.film-synopsis {
     padding-right: 24px;
     font-size: 0.9em;
     margin-bottom: 24px;
 }
 
-.film-description-poster{
+.film-description-poster {
     grid-area: image;
 }
 
-.film-description-poster img{
+.film-description-poster img {
     display: inline-block;
     position: relative;
     width: 100%;
     border-radius: 8px;
 }
 
-.film-time{
+.film-time {
     font-size: 0.9em;
     line-height: 1.8;
     margin-bottom: 24px;
 }
 
-.film-runtime, .film-showtime, .film-tickets{
+.film-runtime,
+.film-showtime,
+.film-tickets {
     display: inline-block;
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 4px;
 }
 
-a.purchase{
+a.purchase {
     display: inline-block;
     padding: 12px 32px;
     background-color: #000;
@@ -253,19 +256,21 @@ a.purchase{
     text-transform: uppercase;
 }
 
-a.purchase i{
+a.purchase i {
     display: inline-block;
     margin-left: 4px;
 }
 
-a.purchase:hover{
+a.purchase:hover {
     background-color: rgb(60, 60, 60);
 }
 
-.hide, .remove-film-description{
+.hide,
+.remove-film-description {
     display: none;
 }
 
-.show, .show-film-description{
+.show,
+.show-film-description {
     display: block;
 }

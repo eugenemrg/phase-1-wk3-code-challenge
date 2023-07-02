@@ -56,7 +56,7 @@ fetch('http://localhost:3008/films')
             })
 
             // Deliverable - See the first movie's details when the page loads
-            if(index === 0){
+            if (index === 0) {
                 populateSummary(filmItem, item)
             }
 
@@ -109,29 +109,29 @@ function populateSummary(filmItemData, linkToFilmItemOnList) {
         // code to handle buy ticket triggered by 'BUY TICKET' button click
         ticketButton.addEventListener('click', (e) => {
             e.preventDefault()
-            
-            if(filmItemData.tickets_sold < filmItemData.capacity){
 
-                filmItemData.tickets_sold +=1
+            if (filmItemData.tickets_sold < filmItemData.capacity) {
 
-                let totalTicketSold = {"tickets_sold": filmItemData.tickets_sold}
+                filmItemData.tickets_sold += 1
+
+                let totalTicketSold = { "tickets_sold": filmItemData.tickets_sold }
 
                 let fetchOptions = {
-                    method : 'PATCH',
+                    method: 'PATCH',
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body : JSON.stringify(totalTicketSold)
+                    body: JSON.stringify(totalTicketSold)
                 }
                 fetch(`http://localhost:3008/films/${filmItemData.id}`, fetchOptions)
-                .then(res => res.json())
-                .then(data => console.log(data))
-                .catch(err => console.error(err))
+                    .then(res => res.json())
+                    .then(data => console.log(data))
+                    .catch(err => console.error(err))
 
                 // Update UI
                 filmTickets.innerText = filmItemData.capacity - filmItemData.tickets_sold
                 ticketButton.innerText = ((filmItemData.capacity - filmItemData.tickets_sold) === 0) ? 'sold out' : 'buy ticket '
-                if(filmItemData.tickets_sold < filmItemData.capacity) ticketButton.appendChild(icon)
+                if (filmItemData.tickets_sold < filmItemData.capacity) ticketButton.appendChild(icon)
                 linkToFilmItemOnList.querySelector('.tickets').innerText = ((filmItemData.capacity - filmItemData.tickets_sold) > 0) ? `${filmItemData.capacity - filmItemData.tickets_sold} tickets` : 'SOLD OUT'
             }
         })
@@ -153,7 +153,7 @@ function deleteFilm(film) {
         },
         body: JSON.stringify(filmInfo)
     }
-    
+
     fetch(`http://localhost:3008/films/${film.id}`, fetchOptions)
         .then(res => res.json())
         .then(data => console.log(data))
