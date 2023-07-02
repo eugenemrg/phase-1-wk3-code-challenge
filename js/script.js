@@ -1,4 +1,6 @@
-fetch('http://localhost:3008/films') //http://localhost:3008/films
+// Fetch after document loads
+// Script is deferred on the header
+fetch('http://localhost:3008/films')
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -62,6 +64,12 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
 
     })
 
+/**
+ * Populate summary with film details
+ * 
+ * @param {object} filmItemData Film object containing film details
+ * @param {element} linkToFilmItemOnList List item on film list
+ */
 function populateSummary(filmItemData, linkToFilmItemOnList) {
     const title = filmItemData.title
     const poster = filmItemData.poster
@@ -130,6 +138,11 @@ function populateSummary(filmItemData, linkToFilmItemOnList) {
     }
 }
 
+/**
+ * Delete selected film
+ * 
+ * @param {object} film Film object containing film data
+ */
 function deleteFilm(film) {
     let filmInfo = { id: film.id }
 
