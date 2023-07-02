@@ -34,6 +34,7 @@ h5 {
 .nav-link {
     padding: 12px 8px;
     text-transform: uppercase;
+    font-size: 0.9em;
 }
 
 .nav-link:hover {
@@ -62,6 +63,9 @@ h5 {
     display: grid;
     grid-template-columns: 10% 8fr 10fr 10%;
     grid-template-areas: '. a b .';
+
+    position: relative;
+    top: -40px;
 }
 
 .content {
@@ -80,7 +84,7 @@ ul#films {
 
 li.item,
 img.poster {
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 li.item {
@@ -125,6 +129,7 @@ div.film-info p.title{
 }
 
 div.film-info p.tickets{
+    font-size: 0.9em;
     display: inline-block;
     color: black;
     background-color: #fdc500;
@@ -133,7 +138,111 @@ div.film-info p.tickets{
     margin: 12px 0px 8px 0px;
 }
 
+.section-title-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-areas: '. title .';
+    padding: 48px 0px 64px 0px;
+    background-color: #fdc500;
+}
+
+.section-title{
+    grid-area: title;
+    font-size: 3.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 /* Details */
 .details{
     grid-area: b;
+    padding-left: 32px;
+}
+
+.film-summary{
+    background-color: white;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 4px;
+    position: sticky;
+    top: 24px;
+}
+
+.sub-header{
+    color: #fdc500;
+    text-transform: uppercase;
+}
+
+.film-description{
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    grid-template-areas: 'text image';
+}
+
+.film-description-text{
+    grid-area: text;
+}
+
+.film-title{
+    text-transform: capitalize;
+}
+
+.film-synopsis{
+    padding-right: 24px;
+    font-size: 0.9em;
+    margin-bottom: 24px;
+}
+
+.film-description-poster{
+    grid-area: image;
+}
+
+.film-description-poster img{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.film-time{
+    font-size: 0.9em;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.film-runtime, .film-showtime, .film-tickets{
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 4px;
+}
+
+a.purchase{
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #000;
+    color: white;
+    border-radius: 48px;
+    margin-top: 24px;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+a.purchase i{
+    display: inline-block;
+    margin-left: 4px;
+}
+
+a.purchase:hover{
+    background-color: rgb(60, 60, 60);
+}
+
+.hide, .remove-film-description{
+    display: none;
+}
+
+.show, .show-film-description{
+    display: block;
 }
