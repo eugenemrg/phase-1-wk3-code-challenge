@@ -59,10 +59,13 @@ h5 {
 /* MAIN-CONTAINER */
 .main-container {
     padding: 8px 10%;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 5%;
+    grid-template-areas: '. a b .';
 }
 
 .content {
-    width: 45%;
+    grid-area: a;
 }
 
 /* FILMS */
@@ -128,4 +131,9 @@ div.film-info p.tickets{
     border-radius: 16px;
     padding: 2px 12px;
     margin: 12px 0px 8px 0px;
+}
+
+/* Details */
+.details{
+    grid-area: b;
 }
