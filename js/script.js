@@ -5,7 +5,7 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
 
         const filmsList = document.querySelector('#films')
 
-        data.forEach(filmItem => {
+        data.forEach((filmItem, index) => {
 
             let item = document.createElement('li')
             item.className = 'film item'
@@ -42,6 +42,11 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
             item.addEventListener('click', (e) => {
                 populateSummary(filmItem, item)
             })
+
+            // Deliverable - See the first movie's details when the page loads
+            if(index === 0){
+                populateSummary(filmItem, item)
+            }
 
         });
 
