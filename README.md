@@ -30,8 +30,13 @@ Recommend local installation as the app requires locally running 'json-server' t
 - CSS
 - JSON
 
-# Demo
+# Screenshots
 
+![screenshot1](assets/screenshots/screenshot01.png)
+
+![screenshot2](assets/screenshots/screenshot02.png)
+
+![screenshot3](assets/screenshots/screenshot03.png)
 
 # Author
 [eugenemrg](https://github.com/eugenemrg) 
