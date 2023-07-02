@@ -9,9 +9,6 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
 
             let item = document.createElement('li')
             item.className = 'film item'
-            item.addEventListener('click', (e)=>{
-                populateSummary(filmItem)
-            })
 
             let poster = document.createElement('img')
             poster.className = 'poster'
@@ -30,7 +27,8 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
 
             let ticketInfo = document.createElement('p')
             ticketInfo.className = 'tickets'
-            ticketInfo.innerText = `${filmItem.capacity - filmItem.tickets_sold} tickets`
+            let ticketsAvailable = filmItem.capacity - filmItem.tickets_sold
+            ticketInfo.innerText = (ticketsAvailable > 0) ? `${filmItem.capacity - filmItem.tickets_sold} tickets` : 'SOLD OUT'
 
             itemInfo.appendChild(titleInfo)
             itemInfo.appendChild(showtimeInfo)
@@ -40,11 +38,16 @@ fetch('http://localhost:3008/films') //http://localhost:3008/films
             item.appendChild(itemInfo)
 
             filmsList.appendChild(item)
+
+            item.addEventListener('click', (e) => {
+                populateSummary(filmItem, item)
+            })
+
         });
 
     })
 
-function populateSummary(filmItemData) {
+function populateSummary(filmItemData, linkToFilmItemOnList) {
     const title = filmItemData.title
     const poster = filmItemData.poster
     const description = filmItemData.description
@@ -74,10 +77,40 @@ function populateSummary(filmItemData) {
     let ticketButton = document.querySelector('.purchase')
     ticketButton.innerText = availableTicketsMessage
 
-    if(availableTickets > 0) {
+    if (availableTickets > 0) {
         // code to add right chevron arrow on ticket button shown on button if tickets aren't sold out
         let icon = document.createElement('i')
         icon.className = 'fa-solid fa-chevron-right'
         ticketButton.appendChild(icon)
+
+        // code to handle buy ticket triggered by 'BUY TICKET' button click
+        ticketButton.addEventListener('click', (e) => {
+            e.preventDefault()
+            
+            if(filmItemData.tickets_sold < filmItemData.capacity){
+
+                filmItemData.tickets_sold +=1
+
+                let totalTicketSold = {"tickets_sold": filmItemData.tickets_sold}
+
+                let fetchOptions = {
+                    method : 'PATCH',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body : JSON.stringify(totalTicketSold)
+                }
+                fetch(`http://localhost:3008/films/${filmItemData.id}`, fetchOptions)
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => console.error(err))
+
+                // Update UI
+                filmTickets.innerText = filmItemData.capacity - filmItemData.tickets_sold
+                ticketButton.innerText = ((filmItemData.capacity - filmItemData.tickets_sold) === 0) ? 'sold out' : 'buy ticket '
+                if(filmItemData.tickets_sold < filmItemData.capacity) ticketButton.appendChild(icon)
+                linkToFilmItemOnList.querySelector('.tickets').innerText = ((filmItemData.capacity - filmItemData.tickets_sold) > 0) ? `${filmItemData.capacity - filmItemData.tickets_sold} tickets` : 'SOLD OUT'
+            }
+        })
     }
 }
