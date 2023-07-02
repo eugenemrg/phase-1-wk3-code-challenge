@@ -84,7 +84,7 @@ function populateSummary(filmItemData, linkToFilmItemOnList) {
     filmShowtime.innerText = showtime
 
     let filmRuntime = document.querySelector('.film-runtime')
-    filmRuntime.innerText = runtime
+    filmRuntime.innerText = `${runtime} minutes`
 
     let filmTickets = document.querySelector('.film-tickets')
     filmTickets.innerText = availableTickets
