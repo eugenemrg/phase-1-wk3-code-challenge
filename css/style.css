@@ -60,7 +60,7 @@ h5 {
 .main-container {
     padding: 8px 10%;
     display: grid;
-    grid-template-columns: 5% 1fr 1fr 5%;
+    grid-template-columns: 5% 8fr 10fr 5%;
     grid-template-areas: '. a b .';
 }
 
